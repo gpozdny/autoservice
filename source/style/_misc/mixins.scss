@@ -1,0 +1,93 @@
+@mixin box-shadow($params){
+	box-shadow: $params;
+	-webkit-box-shadow : $params;
+	-moz-box-shadow: $params;
+}
+
+%clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin inlineblock($valign: top) {
+	display: inline-block;
+	vertical-align: $valign;
+}
+
+@mixin float($left) {
+	float: left ;
+	width: 25% ;
+}
+
+//flex
+
+@mixin	flexMid ($center)	{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// fonts/
+
+@mixin fa-icon() {
+  display: inline-block;
+  font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+@mixin fonts ($name, $alias, $weight: normal, $style: normal) {
+	font-family: $alias;
+	src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".ttf") format("truetype");
+	font-weight: $weight;
+	font-style: $style;
+}
+
+@mixin fira ($style: regular) {
+	@if $style == regular {
+		font-family: 'fira_sansregular';
+	}
+
+	@if $style == bold {
+		font-family: 'fira_sansbold';
+	}
+}
+
+
+//responsive
+@function rem($px) {
+	@return $px / 16px + 0rem;
+}
+
+
+@mixin desktop {
+	@media screen and (max-width: 1300px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}

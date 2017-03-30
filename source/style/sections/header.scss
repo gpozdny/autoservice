@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  background-color: rgba(47, 48, 54, 0.5);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.container--header  {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav  {
+  display: flex;
+  width: 60%;
+
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__item {
+  display: flex;
+}
+
+.header__item-link  {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+    &:hover {
+      color: rgb(2, 122, 154);
+    }
+}
+
+.header__phone  {
+  font-size: 30px;
+  color: rgb(254, 255, 255);
+  font-weight: bold;
+}

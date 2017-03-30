@@ -1,0 +1,95 @@
+.service  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.container--service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.service__title {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.service__title-text  {
+  font-size: 60px;
+  color: rgb(47, 48, 54);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.service__list  {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.service__item  {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+    &:nth-of-type(even) {
+      margin-left: 40px;
+    }
+}
+
+.service__picture, .service__picture--transmission {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  background-image: url(/assets/img/service/transmission.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  filter:opacity(70%);
+  background-position: center;
+}
+
+.service__picture--electro  {
+  background-image: url(/assets/img/service/electro.jpg);
+}
+
+.service__picture--body {
+  background-image: url(/assets/img/service/body.jpg);
+}
+
+.service__picture--tires  {
+  background-image: url(/assets/img/service/tires.jpg);
+}
+
+.service__picture--wash {
+  background-image: url(/assets/img/service/wash.jpg);
+}
+
+.service__picture--engine {
+  background-image: url(/assets/img/service/engine.jpg);
+}
+
+.service__item-text {
+  font-size: 30px;
+  color: rgb(47, 48, 54);
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bold;
+  max-width: 400px;
+  margin-left: -140px;
+  z-index: 1;
+}
+
+.service__button {
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #292929;
+  border-radius: 10px;
+  transition: 0.3s;
+  border-bottom: 1px dashed black;
+    &:hover {
+      color: #000000;
+      border-bottom: 1px transparent;
+    }
+}

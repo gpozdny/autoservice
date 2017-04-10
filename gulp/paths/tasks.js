@@ -15,4 +15,3 @@ module.exports = [
     './gulp/tasks/copy.fonts.js',
     './gulp/tasks/sprite.smith.js'
 ];
-

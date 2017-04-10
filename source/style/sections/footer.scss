@@ -1,0 +1,79 @@
+.footer {
+  display: flex;
+  height: 150px;
+  background-color: #edebee;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container--footer  {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer__line {
+  margin: 10px;
+  height: 1px;
+  background-color: #05b2b9;
+  width: 100%;
+}
+
+.footer__company  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__company-info {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.footer__company-text {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.footer__icons  {
+  display: flex;
+  margin-top: 5px;
+}
+
+.footer__icons-first, .footer__icons-second, .footer__icons-third  {
+  width: 40px;
+  height: 40px;
+}
+
+.footer__icons-first  {
+  background-image: url(/assets/img/footer/driving-wheel.png);
+  background-size: cover;
+}
+
+.footer__icons-second {
+  background-image: url(/assets/img/footer/gear-shift.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer__icons-third {
+  background-image: url(/assets/img/footer/odometer.png);
+  background-size: cover;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__phone  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__address-text, .footer__phone-number  {
+  font-size: 18px;
+}

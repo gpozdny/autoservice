@@ -1,0 +1,26 @@
+section(class="feedback" id="feedback")
+    .feedback__title
+        h2.feedback__title-text.title Отзывы
+    .feedback__slider
+        i(class="fa fa-angle-left" aria-hidden="true")
+        i(class="fa fa-angle-right" aria-hidden="true")
+        ul.feedback__slider-list
+            li.feedback__slider-item
+                .slider-item__title
+                    span.slider-item__name Катя Мёдина
+                    span.slider-item__car Suzuki SX4
+                .slider-item__text
+                    p На своей Skoda Fabia попал в небольшое ДТП. Погнулось крыло, вмятина в передней двери и поцарапался бампер. Начал искать СТО с хорошим кузовным участком. Знакомые посоветовали обратиться сюда. И, правда, отличный автосервиc. Мастера на стапеле выровняли вмятины на крыле, отрихтовали дверь, восстановили повреждения бампера и помогли с подбором краски. После рихтовки, шпаклевки и покраски машина выглядела как новенькая. Специально присматривался и не мог найти поврежденные места, даже по оттенкам краски. Ребята постарались на славу, советую всем со своими проблемами, касающимися машин, обращаться на эту СТО.
+    .container.container--feedback
+        form.feedback__form
+            .feedback__form-wrap
+                input(class="form__name form__input placeholder italic" type="text" placeholder="Ваше Имя")
+                input(class="form__car form__input placeholder italic" type="text" placeholder="Марка и модель авто, год выпуска")
+            .feedback__textarea
+                div(class="feedback__textarea-wrap")
+                    textarea(class="form__text placeholder italic" maxlength="1000" placeholder="Ваш отзыв" required)
+                .textarea__counter
+                    span.textarea__counter-text 0
+                    span.textarea__counter-max / 650
+            .feedback__button-wrap
+                input(class="feedback__button" type="submit" value="Отправить")

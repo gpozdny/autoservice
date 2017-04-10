@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 45px 0;
 }
 
 .container--service {
@@ -14,11 +14,10 @@
 
 .service__title {
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 45px;
 }
 
 .service__title-text  {
-  font-size: 60px;
   color: rgb(47, 48, 54);
   font-weight: bold;
   text-transform: uppercase;
@@ -28,26 +27,32 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .service__item  {
   display: flex;
   align-items: center;
-  margin-bottom: 80px;
-    &:nth-of-type(even) {
-      margin-left: 40px;
-    }
+  width: 500px;
+  margin-bottom: 45px;
+    //&:nth-of-type(even) {
+    //  margin-left: 40px;
+    //}
 }
 
 .service__picture, .service__picture--transmission {
-  width: 300px;
-  height: 300px;
+  width: 230px;
+  height: 230px;
   display: flex;
   background-image: url(/assets/img/service/transmission.jpg);
   background-size: cover;
   border-radius: 50%;
-  filter:opacity(70%);
+  filter:opacity(50%);
   background-position: center;
+    &:hover {
+      filter:opacity(40%);
+    }
 }
 
 .service__picture--electro  {
@@ -71,8 +76,8 @@
 }
 
 .service__item-text {
-  font-size: 30px;
-  color: rgb(47, 48, 54);
+  font-size: 25px;
+  color: rgb(3, 3, 4);
   font-style: italic;
   text-transform: uppercase;
   font-weight: bold;
@@ -82,14 +87,48 @@
 }
 
 .service__button {
+  cursor: pointer;
   text-transform: uppercase;
   font-size: 30px;
   color: #292929;
   border-radius: 10px;
   transition: 0.3s;
   border-bottom: 1px dashed black;
+  margin-bottom: 30px;
     &:hover {
       color: #000000;
       border-bottom: 1px transparent;
     }
+}
+
+.service__prices {
+  display: none;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.service__prices-item {
+  display: flex;
+  border-radius: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgba(2, 206, 255, 0.9);
+  }
+}
+
+.service__prices-name {
+  width: 60%;
+  padding: 10px;
+  border-right: 1px solid black;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.service__prices-price  {
+  width: 40%;
+  padding: 10px;
+  font-size: 24px;
 }

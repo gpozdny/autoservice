@@ -6,7 +6,7 @@ $container-width: 1160px;
 
 html {
 	font-size: 16px;
-	//font-family: $robR;
+	font-family: 'Exo 2', sans-serif;
 }
 
 body, html {
@@ -23,7 +23,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	//overflow: hidden;
+	overflow: hidden;
 	//min-width: $container-width + 20px;
 }
 
@@ -88,42 +88,10 @@ h1, h2 {
 
 //TITLE
 
-//.title	{
-//	position: relative;
-//	display: inline-block;
-//	text-align: center;
-//	font-size: 63px;
-//	text-transform: uppercase;
-//	color: $dgrey;
-//	line-height: 1.048;
-//
-//
-//	&:after {
-//		content: "";
-//		width: 90px;
-//		height: 3px;
-//		background-color: #373e42;
-//		position: absolute;
-//		bottom: -10px;
-//		left: 41%;
-//	}
-//}
-//
-//.title_min	{
-//	text-transform: uppercase;
-//	display: inline-block;
-//	text-align: center;
-//	color: $h2grey;
-//	font-size: 35px;
-//	position: relative;
-//	&:after {
-//		content: "";
-//		width: 90px;
-//		height: 3px;
-//		background-color: $h2grey;
-//		position: absolute;
-//		bottom: -10px;
-//		left: 123px;
-//}
-//	}
-
+.title{
+	font-size: 46px;
+	color: rgb(47, 48, 54);
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}

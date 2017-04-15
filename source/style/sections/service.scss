@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 45px 0;
+  padding: 60px 0;
 }
 
 .container--service {
@@ -14,7 +14,7 @@
 
 .service__title {
   display: flex;
-  margin-bottom: 45px;
+  margin-bottom: 70px;
 }
 
 .service__title-text  {
@@ -29,12 +29,13 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .service__item  {
   display: flex;
   align-items: center;
-  width: 500px;
+  width: 380px;
   margin-bottom: 45px;
     //&:nth-of-type(even) {
     //  margin-left: 40px;
@@ -42,8 +43,8 @@
 }
 
 .service__picture, .service__picture--transmission {
-  width: 230px;
-  height: 230px;
+  width: 240px;
+  height: 240px;
   display: flex;
   background-image: url(/assets/img/service/transmission.jpg);
   background-size: cover;
@@ -76,12 +77,12 @@
 }
 
 .service__item-text {
-  font-size: 25px;
+  font-size: 22px;
   color: rgb(3, 3, 4);
   font-style: italic;
   text-transform: uppercase;
   font-weight: bold;
-  max-width: 400px;
+  max-width: 260px;
   margin-left: -140px;
   z-index: 1;
 }

@@ -28,6 +28,7 @@
     "gulp.spritesmith": "^6.2.1"
   },
   "dependencies": {
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^4.2.0",
+    "jquery-images-compare": "^0.2.3"
   }
 }

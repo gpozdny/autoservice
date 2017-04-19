@@ -7,6 +7,33 @@ $container-width: 1160px;
 html {
 	font-size: 16px;
 	font-family: 'Exo 2', sans-serif;
+	@include desktop	{
+		.container	{
+			width: 100%;
+		}
+	}
+
+
+	@include laptop	{
+		font-size: 15px;
+		.container	{
+			width: 100%;
+		}
+
+	}
+	@include tablets	{
+		font-size: 14px;
+		.container	{
+			width: 100%;
+		}
+
+	}
+	@include phones	{
+		font-size: 12px;
+		.container	{
+			width: 100%;
+		}
+	}
 }
 
 body {

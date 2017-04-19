@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "normalize.css": "^4.2.0",
-    "jquery-images-compare": "^0.2.3"
+    "jquery-images-compare": "^0.2.3",
+    "hammerjs": "^2.0.8"
   }
 }

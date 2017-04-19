@@ -68,6 +68,33 @@ function init(){
         controls : []
     });
 
+    // Создаем ломаную с помощью вспомогательного класса Polyline.
+    var myPolyline = new ymaps.Polyline([
+        // Указываем координаты вершин ломаной.
+        [48.785628, 44.577351],
+        [48.784561, 44.579164],
+        [48.784409, 44.578965],
+        [48.784146, 44.579392],
+        [48.783868, 44.579025]
+    ], {
+        // Описываем свойства геообъекта.
+        // Содержимое балуна.
+        balloonContent: "Ломаная линия"
+    }, {
+        // Задаем опции геообъекта.
+        // Отключаем кнопку закрытия балуна.
+        balloonCloseButton: false,
+        // Цвет линии.
+        strokeColor: "#ff1c26",
+        // Ширина линии.
+        strokeWidth: 4,
+        // Коэффициент прозрачности.
+        strokeOpacity: 0.9
+    });
+
+    // Добавляем линии на карту.
+
+
     myPlacemark = new ymaps.Placemark([48.783943, 44.578888], {
         hintContent: 'АвтоДоп',
         balloonContent: 'Автосервис \ Мойка'
@@ -79,7 +106,9 @@ function init(){
         position: { left: 10, top: 44 }
     });
     myMap.behaviors.disable(['scrollZoom']);
-    myMap.geoObjects.add(myPlacemark);
+    myMap.geoObjects
+        .add(myPlacemark)
+        .add(myPolyline);
 }
 
 // smooth scroll
@@ -213,101 +242,10 @@ $(document).on("click", ".fixed", function() {
 });
 
 // comparison
+$(document).ready(function () {
+    $('#myImageCompare, #myImageCompare1').imagesCompare();
+});
 
-(function( $ ){
+// slider
 
-    $.fn.compare = function() {
-
-        return this.each(function() {
-
-            var $this = $(this);
-
-            var element = this;
-
-            var img = $($this.find('img')[1]);
-
-
-            //Задаем ширину и высоту родительского блока, относительно параметров изображения
-            $this.width( img.width() ).height( img.height() );
-
-            var separator = '<div class="compare_separator">'+
-                '<div class="arrows">'+
-                '<span class="left_arrow"> < </span>'+
-                '<span class="right_arrow"> > </span>'+
-                '</div>'+
-                '</div>';
-
-            //Добавляем разделитель
-            if( $this.prepend(separator) ) {
-
-                var arrows = $this.find(".arrows");
-                arrows.css({"top": ( $this.height() - arrows.height() )/2 + "px" });
-
-            }
-
-
-            //Оборачиваем второе изображение в блок
-            img.wrap('<div class="moved_block"></div>');
-
-            //Двигаем мышью
-            function go_position(e, x) {
-
-                //Позиция compare блока на странице
-                var r = element.getBoundingClientRect();
-
-                //Насколько переместилась мышь влево от левого края блока compare
-                if( x === false || x === undefined ) var left = e.clientX - r.left;
-                else var left = x;
-
-                //Двигаем разделитель и блок обрезки
-                if( left >= 0 && left <= $(element).width() ) {
-                    $(element).find(".compare_separator, .moved_block").css({"left": left+'px'});
-                    img.css({"left": -left+"px"});
-
-                    //Защита от дурака
-                } else if( left < 0 ) {
-                    $(element).find(".compare_separator, .moved_block").css({"left": 0+'px'});
-                    img.css({"left": 0+"px"});
-
-                } else if( left > $(element).width() ) {
-                    $(element).find(".compare_separator, .moved_block").css({"left": $(element).width()+'px'});
-                    img.css({"left": -$(element).width()+"px"});
-                }
-
-            }
-
-            //Функция посредник, для передачи данных
-            var move_separator = function(e) {
-
-                go_position(e, false);
-
-            }
-
-            //Функция привязки событий
-            var bind_move = function() {
-                $(document).bind('mousemove', move_separator);
-            }
-
-            //Отвязываем события когда отпускаем левую кнопку мыши
-            var unbind_move = function() {
-                $(document).unbind('mousemove', move_separator);
-            }
-
-
-            $($this.find(".arrows")).bind("mousedown", bind_move);
-            $(document).bind("mouseup", unbind_move);
-
-            //При клике по блоку compare перемещаем на соответсвующую позицию
-            $(element).bind("click", function(e) {
-                go_position(e);
-            });
-
-            //Отцентровка
-            go_position(false, $(element).width() / 2 );
-
-        })
-    }
-})( jQuery );
-
-$('.compare').compare();
 

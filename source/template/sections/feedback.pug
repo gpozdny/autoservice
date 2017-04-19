@@ -14,13 +14,13 @@ section(class="feedback" id="feedback")
     .container.container--feedback
         form.feedback__form
             .feedback__form-wrap
-                input(class="form__name form__input placeholder italic" type="text" placeholder="Ваше Имя")
-                input(class="form__car form__input placeholder italic" type="text" placeholder="Марка и модель авто, год выпуска")
+                input(class="form__name form__input placeholder italic" type="text" placeholder="Ваше Имя" required)
+                input(class="form__car form__input placeholder italic" type="text" placeholder="Марка и модель авто, год выпуска" required)
             .feedback__textarea
                 div(class="feedback__textarea-wrap")
-                    textarea(class="form__text placeholder italic" maxlength="1000" placeholder="Ваш отзыв" required)
+                    textarea(class="form__text placeholder italic" maxlength="650" placeholder="Ваш отзыв" required)
                 .textarea__counter
                     span.textarea__counter-text 0
                     span.textarea__counter-max / 650
             .feedback__button-wrap
-                input(class="feedback__button" type="submit" value="Отправить")
+                input(class="feedback__button" type="submit" value="Добавить")

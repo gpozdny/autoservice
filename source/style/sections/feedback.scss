@@ -1,6 +1,6 @@
 .feedback {
   display: flex;
-  background-image: url(/assets/img/feedback/feedback_bg.jpg);
+  background-image: url(../img/feedback/feedback_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
@@ -77,7 +77,7 @@
   &:after  {
     content: "";
     position: absolute;
-    background-image: url(/assets/img/feedback/quotes.png);
+    background-image: url(../img/feedback/quotes.png);
     background-size: cover;
     width: 285px;
     height: 250px;
@@ -87,7 +87,7 @@
   &:before  {
     content: "";
     position: absolute;
-    background-image: url(/assets/img/feedback/quotes.png);
+    background-image: url(../img/feedback/quotes.png);
     background-size: cover;
     width: 285px;
     height: 250px;

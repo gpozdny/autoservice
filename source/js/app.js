@@ -246,6 +246,158 @@ $(document).ready(function () {
     $('#myImageCompare, #myImageCompare1').imagesCompare();
 });
 
+// slider section
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+(function( $ ){
+
+    $.fn.mySlider = function(contentClass, slideClass, time, interval) {
+
+        var t = this;
+
+        var content = t.find(contentClass);
+        var slides = t.find(slideClass);
+
+        var pointsClass = "points";
+        var pointClass = "point";
+
+
+        //Добавляем точки
+        function renderPoints() {
+
+            if( t.append('<div class="'+pointsClass+'"></div>') ) {
+
+                var points = t.find("."+pointsClass);
+
+                slides.each(function(i) {
+
+                    $(this).attr({"slide": i});
+
+                    points.append('<span class="'+pointClass+'" item="'+i+'"></span>');
+
+                });
+
+            }
+
+            return true;
+
+        }
+
+
+        //Интервал карусели
+        function sliderInterval() {
+
+            return setInterval(function() {
+
+                var active = t.find(".active_slide");
+
+
+                var next = active.next(slideClass);
+
+                //Если слайды закончились
+                if( !next.length ) {
+
+                    var i = 0;
+
+                    content.animate({"left": 0}, time);
+
+                    active.removeClass("active_slide");
+                    t.find(slideClass+":first").addClass("active_slide");
+
+                    $(".active_point").removeClass("active_point");
+                    t.find("."+pointClass+'[item='+i+']').addClass("active_point");
+
+
+                    return true;
+
+                }
+
+                content.stop().animate({"left": -next.position().left }, time, function() {
+
+                    var i = next.attr("slide");
+
+                    active.removeClass("active_slide");
+                    next.addClass("active_slide");
+
+                    $(".active_point").removeClass("active_point");
+                    t.find("."+pointClass+'[item='+i+']').addClass("active_point");
+
+                });
+
+
+            }, interval);
+
+        }
+
+        var sliderIntervalID = sliderInterval();
+
+
+
+        //Вешаем обработчик на батоны
+        $(document).on("click", "."+pointsClass+" ."+pointClass, function() {
+
+            var _this = $(this);
+
+            if( _this.hasClass("active_point") ) return true;
+
+            clearInterval( sliderIntervalID );
+
+            var i = _this.attr("item");
+            var next = t.find('[slide='+ i +']');
+
+            var active = $(".active_slide");
+
+
+            content.stop().animate({"left": -next.position().left }, time, function() {
+
+
+                active.removeClass("active_slide");
+                next.addClass("active_slide");
+
+                $(".active_point").removeClass("active_point");
+                t.find("."+pointClass+'[item='+i+']').addClass("active_point");
+
+                //Запускаем интервал
+                sliderIntervalID = sliderInterval();
+
+            });
+
+        })
+
+        //Если батоны добавились, добавляем класс первой кнопке
+        if( renderPoints() ) {
+
+            t.find("."+pointsClass+" ."+pointClass+ ":first").addClass("active_point");
+            t.find(slideClass+":first").addClass("active_slide");
+
+        }
+
+    };
+})( jQuery );
+
+$("#slider").mySlider(".slider__list", ".slider__item", 1000, 4000);
+$("#feedback__slider").mySlider(".feedback__slider-list", ".feedback__slider-item", 1000, 4000);
+
+
+// smooth scroll to ads
+
+$(document).ready(function () {
+
+    $('.slider__link').click(function (e) {
+
+        var href = $(this).attr('href');
+
+        $('html, body').animate({
+            scrollTop:  $(href).offset().top - ($(window).height()) / 4
+        }, 500);
+
+        e.preventDefault();
+    });
+});
+
 // slider
-
-
